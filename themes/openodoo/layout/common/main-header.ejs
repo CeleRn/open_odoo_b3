@@ -1,0 +1,38 @@
+<% if (page.headerBg) { %>
+  <% if (page.banner !== undefined) { %>
+    <div class="main__header main__header_inverted" data-background-image="<%= page.banner %>">
+      <div class="main__header-bg-gray"></div>
+  <% } else { %>
+    <div class="main__header main__header_inverted">
+  <% } %>
+<% } else { %>
+  <div class="main__header">
+<% } %>
+<div class="container">
+  <% if (typeof hideTitle == 'undefined') { %>
+    <h1 class="main-title"><%= page.title %></h1>
+  <% } else { %>
+    <% if (!hideTitle) { %>
+      <h1 class="main-title"><%= page.title %></h1>
+    <% } %>
+  <% } %>
+  <% if (typeof typePage != 'undefined') { %>
+    <% if (typePage == "forum") { %>
+      <div class="forum_intro">
+        <h3 class="forum_intro__title">Добро пожаловать!</h3>
+        <p class="forum_intro__text">This community is for professionals and enthusiasts of our products and services. Share and discuss the best
+            content and new marketing ideas, build your professional profile and become a better marketer together.</p>
+        <a class="forum_intro__close" href="#">
+            <%- partial('svg-sprite-element', {icon: "close", cssSelector: "forum_intro__close-icon"}) %>
+        </a>
+        <a class="forum_intro__registration-url" href="/web/signup/">Регистрация</a>
+      </div>
+    <% } %>
+  <% } %>
+
+
+</div>
+
+
+
+</div>

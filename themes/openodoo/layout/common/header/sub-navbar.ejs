@@ -1,0 +1,78 @@
+<div class="sub-navbar">
+  <div class="container">
+
+    <!-- Хлебные крошки -->
+    <% if(page.breadcrumbs || page.breadcrumbCurrent) { %>
+      <div class="sub-navbar__breadcrumb">
+        <ol class="breadcrumb__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <li class="breadcrumb__item">
+            <a href="/" class="breadcrumb__link breadcrumb__link_home">
+              <%- partial('../svg-sprite-element', {icon: "home", cssSelector: "breadcrumb__icon"}) %>
+            </a>
+          </li>
+          <% var i=1 %>
+          <% for(var breadcrumb in page.breadcrumbs) { %>
+            <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a class="breadcrumb__link" itemprop="item" href="<%= page.breadcrumbs[breadcrumb].url %>">
+                <span itemprop="name">
+                  <%= page.breadcrumbs[breadcrumb].name %>
+                </span>
+              </a>
+              <meta itemprop="position" content="<%= i %>" />
+              <% i++; %>
+            </li>
+          <% } %>
+        </ol>
+      </div>
+    <% } %>
+    
+    <!-- Субменю -->
+    <% if (page.subMenu) { %>
+
+      <a href="#" class="sub-navbar__submenu-toggler submenu-toggler collapsed" data-toggle="collapse" data-target="#submenu" aria-controls="submenu"
+      aria-expanded="false" aria-label="Toggle sub menu">
+        <span class="submenu-toggler__title"><%= page.submenuTitle %></span>
+        <%- partial('common/svg-sprite-element', {icon: "arrow-down", cssSelector: "submenu-toggler__icon submenu-toggler__icon_close"}) %>
+        <%- partial('common/svg-sprite-element', {icon: "close", cssSelector: "submenu-toggler__icon submenu-toggler__icon_open"}) %>
+      </a>
+
+
+      <div class="sub-navbar__submenu submenu collapse" id="submenu">
+          <% if (page.subMenu) { %> 
+            <ul class="submenu__list">
+              <% var items = page.subMenuItems %>
+              <% for(var item in page.subMenuItems) { %>
+                <li class="submenu__item">
+                  <a href="<%= items[item].url %>" class="submenu__link"><%= items[item].name %></a>
+                </li>
+              <% } %>
+            </ul>
+          <% } %>
+          <% if (page.subMenuAction) { %> 
+            <ul class="submenu__list submenu__list_with-actions">
+                <% var items = page.subMenuItemsAction %>
+                <% for(var item in page.subMenuItemsAction) { %>
+                  <% if (items[item].isParent) { %>
+                    <li class="submenu__item dropdown">
+                      <a class="submenu__link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><%= items[item].name %></a>
+                      <ul class="dropdown-menu dropdown-menu-right">
+                        <% for(var child in items[item].childs) { %>
+                          <li>
+                            <a href="<%= items[item].childs[child].url %>" role="menuitem"><%= items[item].childs[child].name %></a>
+                          </li>
+                        <% } %>
+                      </ul>
+                    </li>
+                  <% } else { %>
+                    <li class="submenu__item">
+                      <a href="<%= items[item].url %>" class="submenu__link"><%= items[item].name %></a>
+                    </li>
+                  <% } %>
+                <% } %>
+              </ul>
+          <% } %>
+        </div>
+      </div>
+    <% } %>
+    
+</div>

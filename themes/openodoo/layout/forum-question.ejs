@@ -1,0 +1,342 @@
+<%- partial('common/main-header', {hideTitle: true}) %>
+
+  <div class="container">
+    <%- partial('partials/forum/section-navbar') %>
+  </div>
+  <div class="forum">
+    <div class="container">
+      <div class="forum__left-column">
+        <div class="forum-item">
+          <div class="forum-item__top">
+            <div class="forum-item__top-left">
+
+              <%- partial('common/svg-sprite-element', {icon: "question", cssSelector: "forum-item__main-icon"}) %>
+
+                <div class="forum-item__vote vote">
+                  <button class="vote__up"></button>
+                  <div class="vote__count">113</div>
+                  <button class="vote__down"></button>
+                </div>
+
+                <div class="favorit-forum-item">
+                  <a href="#" class="favorit-forum-item__link" data-container="body" data-toggle="popover" data-placement="right" data-trigger="hover"
+                    data-content="Добавить вопрос в избранные">
+                    <%- partial('common/svg-sprite-element', {icon: "star", cssSelector: "favorit-forum-item__icon"}) %>
+                  </a>
+                </div>
+            </div>
+            <div class="forum-item__top-right">
+              <h1 class="forum-item__title forum-item__title_h1">CMS replacement for ERP and eCommerce</h1>
+              <div class="forum-item__sub-title sub-title">
+                <div class="sub-title__item sub-title__item_sm-100">
+                  <%- partial('common/svg-sprite-element', {icon: "date", cssSelector: "sub-title__icon"}) %>
+                    <span class="sub-title__item-value">02.03.18, 14:05</span>
+                </div>
+                <div class="sub-title__item sub-title__item_with-flag">
+                  <img class="sub-title__country-flag" src="/assets/images/russia.png" />
+                </div>
+                <div class="sub-title__item">
+                  <%- partial('common/svg-sprite-element', {icon: "person", cssSelector: "sub-title__icon"}) %>
+                    <a href="#" class="sub-title__item-value">Admin</a>
+                </div>
+
+                <div class="sub-title__item">
+                  <%- partial('common/svg-sprite-element', {icon: "eye", cssSelector: "sub-title__icon"}) %>
+                    <span class="sub-title__item-value">19</span>
+                </div>
+              </div>
+
+              <div class="forum-item__tags-list">
+                <a href="#" class="forum-item__tag">Wordpress</a>
+                <a href="#" class="forum-item__tag">CMS</a>
+                <a href="#" class="forum-item__tag">ecommerce</a>
+                <a href="#" class="forum-item__tag">Odoo</a>
+              </div>
+
+              <div class="forum-item__text forum-item__text_full">
+                <%- markdown(page.content) %>
+              </div>
+            </div>
+          </div>
+          <div class="forum-item__middle">
+            <a class="forum-item__share-link collapsed" data-toggle="collapse" href="#forum-item-share" role="button" aria-expanded="false"
+              aria-controls="forum-item-share">
+              <%- partial('common/svg-sprite-element', {icon: "share", cssSelector: "forum-item__share-icon"}) %>
+            </a>
+            <div class="forum-item__buttons-list">
+              <a href="#post-reply" class="forum-item__button" id="post-reply-link">
+                <%- partial('common/svg-sprite-element', {icon: "reply", cssSelector: "forum-item__button-icon"}) %>
+                  Дать ответ
+              </a>
+              <!-- commentforumpost-2 -->
+
+            </div>
+            <div class="forum-item__share collapse" id="forum-item-share">
+              <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+              <script src="//yastatic.net/share2/share.js"></script>
+              <div class="ya-share2" data-services="vkontakte,facebook,gplus,twitter,viber,whatsapp,skype,telegram"></div>
+            </div>
+          </div>
+          <div class="forum-item__bottom">
+            <div class="forum-item__footer forum-item__footer_align_flex-end">
+              <a href="#" class="forum-item__footer-item-link">
+                <%- partial('common/svg-sprite-element', {icon: "edit", cssSelector: "forum-item__footer-icon"}) %>
+                  <span>Править</span>
+              </a>
+              <a href="#" class="forum-item__footer-item-link">
+                <%- partial('common/svg-sprite-element', {icon: "close", cssSelector: "forum-item__footer-icon"}) %>
+                  <span>Закрыть</span>
+              </a>
+              <a href="#" class="forum-item__footer-item-link">
+                <%- partial('common/svg-sprite-element', {icon: "delete", cssSelector: "forum-item__footer-icon"}) %>
+                  <span>Удалить</span>
+              </a>
+              <a href="#" class="forum-item__footer-item-link">
+                <%- partial('common/svg-sprite-element', {icon: "warning", cssSelector: "forum-item__footer-icon"}) %>
+                  <span>Пожаловаться</span>
+              </a>
+            </div>
+          </div>
+          <div class="forum-item__comments-block">
+            <div class="comment">
+              <form class="comment__close" method="POST" action="/forum/1/post/cms-replacement-for-erp-and-ecommerce-2/comment/cms-replacement-for-erp-and-ecommerce-186/delete">
+                <input type="hidden" name="csrf_token" value="8cf6213b6f8f77dccdaf6104c7539b656800d017o1521723648">
+                <button class="comment__close-button karma_required" data-karma="500">
+                  <%- partial('common/svg-sprite-element', {icon: "close", cssSelector: "comment__close-icon"}) %>
+                </button>
+              </form>
+              <div class="comment__content">
+                <p>то сообщество для профессионалов и энтузиастов наших продуктов и услуг. Делитесь и обсуждайте лучший контент
+                  и новые маркетинговые идеи, построите свой профессиональный профиль и станьте лучшим маркетологом вместе.</p>
+              </div>
+              <div class="comment__footer comment-footer">
+                <div class="comment-footer__item comment-footer__item_sm-100">
+                  <%- partial('common/svg-sprite-element', {icon: "date", cssSelector: "comment-footer__icon"}) %>
+                    <span class="sub-title__item-value">02.03.18, 14:05</span>
+                </div>
+                <div class="comment-footer__item comment-footer__item_with-flag">
+                  <img class="comment-footer__country-flag" src="/assets/images/russia.png" />
+                </div>
+                <div class="comment-footer__item">
+                  <%- partial('common/svg-sprite-element', {icon: "person", cssSelector: "comment-footer__icon"}) %>
+                    <a href="#" class="sub-title__item-value">Admin</a>
+                </div>
+                <form class="comment-footer__action" method="POST" action="/forum/1/post/cms-replacement-for-erp-and-ecommerce-2/comment/cms-replacement-for-erp-and-ecommerce-186/convert_to_answer">
+                  <input type="hidden" name="csrf_token" value="8cf6213b6f8f77dccdaf6104c7539b656800d017o1521723648">
+                  <button class="comment-footer__action-button karma_required" data-karma="500">
+                    <%- partial('common/svg-sprite-element', {icon: "note-off", cssSelector: "comment-footer__icon"}) %>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="comment">
+              <form class="comment__close" method="POST" action="/forum/1/post/cms-replacement-for-erp-and-ecommerce-2/comment/cms-replacement-for-erp-and-ecommerce-186/delete">
+                <input type="hidden" name="csrf_token" value="8cf6213b6f8f77dccdaf6104c7539b656800d017o1521723648">
+                <button class="comment__close-button karma_required" data-karma="500">
+                  <%- partial('common/svg-sprite-element', {icon: "close", cssSelector: "comment__close-icon"}) %>
+                </button>
+              </form>
+              <div class="comment__content">
+                <p>то сообщество для профессионалов и энтузиастов наших продуктов и услуг. Делитесь и обсуждайте лучший контент
+                  и новые маркетинговые идеи, построите свой профессиональный профиль и станьте лучшим маркетологом вместе.</p>
+              </div>
+              <div class="comment__footer comment-footer">
+                <div class="comment-footer__item comment-footer__item_sm-100">
+                  <%- partial('common/svg-sprite-element', {icon: "date", cssSelector: "comment-footer__icon"}) %>
+                    <span class="sub-title__item-value">02.03.18, 14:05</span>
+                </div>
+                <div class="comment-footer__item comment-footer__item_with-flag">
+                  <img class="comment-footer__country-flag" src="/assets/images/russia.png" />
+                </div>
+                <div class="comment-footer__item">
+                  <%- partial('common/svg-sprite-element', {icon: "person", cssSelector: "comment-footer__icon"}) %>
+                    <a href="#" class="sub-title__item-value">Admin</a>
+                </div>
+                <form class="comment-footer__action" method="POST" action="/forum/1/post/cms-replacement-for-erp-and-ecommerce-2/comment/cms-replacement-for-erp-and-ecommerce-186/convert_to_answer">
+                  <input type="hidden" name="csrf_token" value="8cf6213b6f8f77dccdaf6104c7539b656800d017o1521723648">
+                  <button class="comment-footer__action-button karma_required" data-karma="500">
+                    <%- partial('common/svg-sprite-element', {icon: "note-off", cssSelector: "comment-footer__icon"}) %>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="forum-item__comment-action">
+              <a class="forum-item__button collapsed" data-toggle="collapse" href="#commentforumpost-2" role="button" aria-expanded="false"
+                aria-controls="commentforumpost-2">
+                <%- partial('common/svg-sprite-element', {icon: "chat", cssSelector: "forum-item__button-icon"}) %>
+                  Комментировать
+              </a>
+            </div>
+            <form class="forum-item__comment-form comment-form collapse js_website_submit_form" method="POST" id="commentforumpost-2"
+              action="/forum/1/post/cms-replacement-for-erp-and-ecommerce-2/comment" aria-expanded="true">
+              <textarea name="comment" class="comment-form__textarea" rows="4" placeholder="Комментировать эту публикацию..."></textarea>
+              <button type="submit" class="comment-form__submit" data-oe-field="arch">Отправить</button>
+            </form>
+          </div>
+
+
+        </div>
+        <div class="forum-item forum-item_success" data-sucess="Правильный ответ">
+          <div class="forum-item__top">
+            <div class="forum-item__top-left">
+              <div class="forum-item__vote vote">
+                <button class="vote__up"></button>
+                <div class="vote__count">113</div>
+                <button class="vote__down"></button>
+              </div>
+              <div class="accept-answer-forum-item">
+                <a href="#" class="accept-answer-forum-item__link" data-container="body" data-toggle="popover" data-placement="right" data-trigger="hover"
+                  data-content="Пометить ответ, как правильный">
+                  <%- partial('common/svg-sprite-element', {icon: "check", cssSelector: "accept-answer-forum-item__icon"}) %>
+                </a>
+              </div>
+            </div>
+            <div class="forum-item__top-right">
+              <div class="forum-item__sub-title sub-title">
+                <div class="sub-title__item sub-title__item_sm-100">
+                  <%- partial('common/svg-sprite-element', {icon: "date", cssSelector: "sub-title__icon"}) %>
+                    <span class="sub-title__item-value">02.03.18, 14:05</span>
+                </div>
+                <div class="sub-title__item sub-title__item_with-flag">
+                  <img class="sub-title__country-flag" src="/assets/images/russia.png" />
+                </div>
+                <div class="sub-title__item">
+                  <%- partial('common/svg-sprite-element', {icon: "person", cssSelector: "sub-title__icon"}) %>
+                    <a href="#" class="sub-title__item-value">Admin</a>
+                </div>
+              </div>
+              <div class="forum-item__text forum-item__text_full">
+                <%- markdown(page.content) %>
+              </div>
+            </div>
+          </div>
+          <div class="forum-item__bottom">
+            <div class="forum-item__footer forum-item__footer_align_flex-end">
+              <a href="#" class="forum-item__footer-item-link">
+                <%- partial('common/svg-sprite-element', {icon: "edit", cssSelector: "forum-item__footer-icon"}) %>
+                  <span>Править</span>
+              </a>
+              <a href="#" class="forum-item__footer-item-link">
+                <%- partial('common/svg-sprite-element', {icon: "close", cssSelector: "forum-item__footer-icon"}) %>
+                  <span>Закрыть</span>
+              </a>
+              <a href="#" class="forum-item__footer-item-link">
+                <%- partial('common/svg-sprite-element', {icon: "delete", cssSelector: "forum-item__footer-icon"}) %>
+                  <span>Удалить</span>
+              </a>
+              <a href="#" class="forum-item__footer-item-link">
+                <%- partial('common/svg-sprite-element', {icon: "warning", cssSelector: "forum-item__footer-icon"}) %>
+                  <span>Пожаловаться</span>
+              </a>
+              <a href="#" class="forum-item__footer-item-link">
+                <%- partial('common/svg-sprite-element', {icon: "note-on", cssSelector: "forum-item__footer-icon"}) %>
+                  <span>Преобразовать в комментарий</span>
+              </a>
+            </div>
+          </div>
+          <div class="forum-item__comments-block">
+            <div class="forum-item__comment-action">
+              <a class="forum-item__button collapsed" data-toggle="collapse" href="#commentforumpost-3" role="button" aria-expanded="false"
+                aria-controls="commentforumpost-3">
+                <%- partial('common/svg-sprite-element', {icon: "chat", cssSelector: "forum-item__button-icon"}) %>
+                  Комментировать
+              </a>
+            </div>
+            <form class="forum-item__comment-form comment-form collapse js_website_submit_form" method="POST" id="commentforumpost-3"
+              action="/forum/1/post/cms-replacement-for-erp-and-ecommerce-3/comment" aria-expanded="true">
+              <textarea name="comment" class="comment-form__textarea" rows="4" placeholder="Комментировать эту публикацию..."></textarea>
+              <button type="submit" class="comment-form__submit" data-oe-field="arch">Отправить</button>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="post-reply" id="post_reply">
+
+          <h3 class="post-reply__title">Ваш ответ</h3>
+          <div class="post-reply__description">
+            <ul>
+              <li>Пожалуйста, попробуйте дать существенный ответ.</li>
+              <li>Если вы хотите прокомментировать вопрос или ответ, просто
+                  <b>используйте инструмент комментарий.</b></li>
+              <li>Пожалуйста, помните, что вы всегда можете
+                  <b>изменить ваши ответы</b></li>
+              <li>не нужно отвечать на тот же вопрос дважды.</li>
+              <li><b>не забывайте голосовать</b> - это действительно помогает выбрать лучшие вопросы и ответы!</li>
+            </ul>
+          </div>
+          <form method="post" class="post-reply__form js_website_submit_form" role="form" action="/forum/1/11/reply">
+            <input type="hidden" name="csrf_token" value="c8dd51b9c9f70458078bef3ffa1c24fab47a66d3o1521755133">
+            <input type="hidden" name="karma" id="karma" value="7">
+            <div id="post-reply_summernote"></div>
+            <button type="submit" data-social-target-type="answer" data-hashtags="#answer" class="post-reply__submit oe_social_share_call" data-karma="3">Опубликовать ответ</button>
+          </form>
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="forum__right-column" id="right-column">
+        <div class="panel">
+          <h3 class="panel__title">Подписаться на весь форум</h3>
+          <div class="panel__body">
+            <div class="form-follow js_follow" data-id="1" data-object="forum.forum" data-follow="off">
+              <input type="email" name="email" class="form-follow__input js_follow_email" placeholder="Ваш email" />
+              <span class="form-follow__buttons">
+                <button href="#" class="form-follow__unfollow-btn js_unfollow_btn hidden">Отписаться</button>
+                <button href="#" class="form-follow__follow-btn js_follow_btn">Подписаться</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3 class="panel__title">Об этом сообществе</h3>
+          <div class="panel__body">
+            <p>Это сообщество для профессионалов и энтузиастов наших продуктов и услуг. Делитесь и обсуждайте лучший контент
+              и новые маркетинговые идеи, построите свой профессиональный профиль и станьте лучшим маркетологом вместе.</p>
+            <a class="fa fa-arrow-right" href="/forum/1/faq"> Читать руководство</a>
+          </div>
+        </div>
+        <div class="panel">
+          <h3 class="panel__title">Подписаться на этот вопрос</h3>
+          <div class="panel__body">
+
+            <div class="form-follow js_follow" data-id="1" data-object="forum.forum" data-follow="off">
+              <input type="email" name="email" class="form-follow__input js_follow_email" placeholder="Ваш email">
+              <span class="form-follow__buttons">
+                <button href="#" class="form-follow__unfollow-btn js_unfollow_btn hidden">Отписаться</button>
+                <button href="#" class="form-follow__follow-btn js_follow_btn">Подписаться</button>
+              </span>
+            </div>
+            <div class="follovers">
+              <span class="follovers__count">12</span> подписчиков
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3 class="panel__title">Статистика</h3>
+          <div class="panel__body">
+            <dl>
+              <dt>Задан:</dt>
+              <dd>02.03.18, 14:05</dd>
+            </dl>
+            <dl>
+              <dt>Просмотрен:</dt>
+              <dd>24 раза</dd>
+            </dl>
+            <dl>
+              <dt>Последнее обновление:</dt>
+              <dd>04.03.18, 12:41</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="oe_structure"></div>

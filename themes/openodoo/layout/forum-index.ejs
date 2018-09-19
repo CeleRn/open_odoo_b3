@@ -1,0 +1,45 @@
+<%- partial('common/main-header', {typePage: 'forum'}) %>
+
+  <div class="container">
+    <%- partial('partials/forum/section-navbar') %>
+  </div>
+  <div class="forum">
+    <div class="container">
+      <div class="forum__left-column">
+        <%- partial('partials/forum/alert') %>
+        <%- partial('partials/forum/forum-header') %>
+        <%- partial('partials/forum/questions-list') %>
+      </div>
+      <aside class="forum__right-column" id="right-column">
+        <div class="panel">
+          <h3 class="panel__title">Держать в курсе</h3>
+          <div class="panel__body">
+            <div class="form-follow js_follow" data-id="1" data-object="forum.forum" data-follow="off">
+              <input type="email" name="email" class="form-follow__input js_follow_email" placeholder="Ваш email" />
+              <span class="form-follow__buttons">
+                <button href="#" class="form-follow__unfollow-btn js_unfollow_btn hidden">Отписаться</button>
+                <button href="#" class="form-follow__follow-btn js_follow_btn">Подписаться</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3 class="panel__title">Об этом сообществе</h3>
+          <div class="panel__body">
+            <p>Это сообщество для профессионалов и энтузиастов наших продуктов и услуг. Делитесь и обсуждайте лучший контент
+              и новые маркетинговые идеи, построите свой профессиональный профиль и станьте лучшим маркетологом вместе.</p>
+            <a class="fa fa-arrow-right" href="/forum/1/faq"> Читать руководство</a>
+          </div>
+        </div>
+        <div class="panel" id="moderation_tools">
+          <h3 class="panel__title">Инструменты модерации</h3>
+            <div class="panel__body">
+              <a href="/forum/1/validation_queue"><strong>0</strong> ожидает подтверждения</a><br/>
+              <a href="/forum/1/flagged_queue"><strong id="count_flagged_posts">0</strong> публикация помечено</a>
+            </div>
+        </div>
+        
+      </aside>
+    </div>
+  </div>
+  <div class="oe_structure"></div>

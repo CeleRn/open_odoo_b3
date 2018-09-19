@@ -1,0 +1,41 @@
+{
+  "name": "hexo-theme-backway",
+  "version": "0.0.1",
+  "description": "Theme for site backway.ru",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CeleRn",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "bootstrap": "^4",
+    "codemirror": "^5.36.0",
+    "css-loader": "^0.28.8",
+    "export-loader": "^1.0.52",
+    "exports-loader": "^0.6.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "imports-loader": "^0.7.1",
+    "jquery": "^3.2.1",
+    "jquery-validation": "^1.17.0",
+    "jquery.inputmask": "^3.3.4",
+    "materialize-css": "^0.100.2",
+    "node-sass": "^4.7.2",
+    "owl.carousel": "^2.2.0",
+    "path": "^0.12.7",
+    "popper.js": "^1.12.9",
+    "postcss-loader": "^2.0.10",
+    "require-yml": "^1.3.1",
+    "sass-loader": "^6.0.6",
+    "summernote": "^0.8.10",
+    "svg-sprite-loader": "^3.6.2",
+    "svgo": "^1.0.3",
+    "svgo-loader": "^2.1.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.0"
+  }
+}

@@ -1,0 +1,82 @@
+<div class="posts-list">
+  <% var items = page.items %>
+  <% items.forEach(function (post, i) { %>
+    <div class="forum-item<% if (post.success) { %> forum-item_success<% } %>" data-sucess="<%= post.dataSuccess %>">
+        <div class="forum-item__top">
+          <div class="forum-item__top-left">
+            <% if(post.typeItem == 'question') { %>
+              <%- partial('../../common/svg-sprite-element', {icon: "question", cssSelector: "forum-item__main-icon"}) %>
+            <% } %>
+            <% if(post.typeItem == 'link') { %>
+              <%- partial('../../common/svg-sprite-element', {icon: "link", cssSelector: "forum-item__main-icon"}) %>
+            <% } %>
+            <% if(post.typeItem == 'forum') { %>
+              <%- partial('../../common/svg-sprite-element', {icon: "forum", cssSelector: "forum-item__main-icon"}) %>
+            <% } %>
+            <div class="forum-item__vote vote">
+              <button class="vote__up"></button>
+              <div class="vote__count"><%= post.vote %></div>
+              <button class="vote__down"></button>
+            </div>
+            <div class="favorit">
+
+            </div>
+          </div>
+    
+          <div class="forum-item__top-right">
+            <h3 class="forum-item__title">
+              <a href="<%= post.url %>" class="forum-item__link"><%= post.title %></a>
+            </h3>
+            <div class="forum-item__text"><%= post.text %></div>
+          </div>
+    
+        </div>
+    
+        <div class="forum-item__middle forum-item__middle_flex-end">
+          <div class="forum-item__tags-list">
+              <% post.tags.forEach(function (tag, i) { %>
+                <a href="#" class="forum-item__tag"><%= tag.name %></a>
+              <% }); %>
+          </div>
+        </div>
+    
+        <div class="forum-item__bottom">
+          <div class="forum-item__footer">
+            <div class="forum-item__footer-item forum-item__footer-item_with-flag">
+              <img class="forum-item__country-flag" src="<%= post.countryFlag %>" />
+            </div>
+            <div class="forum-item__footer-item">
+              <%- partial('common/svg-sprite-element', {icon: "person", cssSelector: "forum-item__footer-icon"}) %>
+                <a href="#" class="forum-item__footer-item-value"><%= post.user %></a>
+            </div>
+            <div class="forum-item__footer-item">
+              <%- partial('common/svg-sprite-element', {icon: "date", cssSelector: "forum-item__footer-icon"}) %>
+                <span class="forum-item__footer-item-value"><%= post.date %></span>
+            </div>
+            <div class="forum-item__footer-item">
+              <%- partial('common/svg-sprite-element', {icon: "eye", cssSelector: "forum-item__footer-icon"}) %>
+                <span class="forum-item__footer-item-value"><%= post.views %></span>
+            </div>
+            <div class="forum-item__footer-item ">
+              <%- partial('common/svg-sprite-element', {icon: "answer", cssSelector: "forum-item__footer-icon"}) %>
+                <a href="<%= post.url %>" class="forum-item__footer-item-value"><%= post.answers %> <%= declOfNum(post.answers, post.answersName) %></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% }); %>
+</div>
+<ul class="o_pagination_big forum-pagination">
+    <li class="disabled"><a href="">Prev</a></li>
+    <li class="active"> <a href="/forum/help-1?sorting=write_date+desc&amp;filters=all">1</a></li>
+    <li> <a href="/forum/help-1/page/2?sorting=write_date+desc&amp;filters=all">2</a></li>
+    <li> <a href="/forum/help-1/page/3?sorting=write_date+desc&amp;filters=all">3</a></li>
+    <li> <a href="/forum/help-1/page/4?sorting=write_date+desc&amp;filters=all">4</a></li>
+    <li> <a href="/forum/help-1/page/5?sorting=write_date+desc&amp;filters=all">5</a></li>
+    <li> <a href="/forum/help-1/page/6?sorting=write_date+desc&amp;filters=all">6</a></li>
+    <li> <a href="/forum/help-1/page/7?sorting=write_date+desc&amp;filters=all">7</a></li>
+    <li> <a href="/forum/help-1/page/8?sorting=write_date+desc&amp;filters=all">8</a></li>
+    <li> <a href="/forum/help-1/page/9?sorting=write_date+desc&amp;filters=all">9</a></li>
+    <li> <a href="/forum/help-1/page/10?sorting=write_date+desc&amp;filters=all">10</a></li>
+    <li><a href="/forum/help-1/page/2?sorting=write_date+desc&amp;filters=all">Следующий</a></li>
+</ul>

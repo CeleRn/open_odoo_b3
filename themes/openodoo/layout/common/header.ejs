@@ -1,0 +1,11 @@
+<% if (page.headerBg) { %>
+  <header class="header header_invert">
+<% } else { %>
+  <header class="header">
+<% } %>
+  <%- partial('header/main-navbar') %>
+  <% if (page.subNavbar) { %>
+    <%- partial('header/sub-navbar') %>
+  <% } %>
+  
+</header>

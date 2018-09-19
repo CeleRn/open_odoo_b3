@@ -1,0 +1,767 @@
+@import "forum/forums-list";
+@import "forum/forum-intro";
+@import "forum/section-navbar";
+@import "forum/right-aside";
+.forum {
+    margin-top: 50px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__left-column {
+        flex-basis: 75%;
+        flex-grow: 1;
+        padding-right: 7.5px;
+        @include media-breakpoint-down(md) {
+            flex-basis: 100%;
+            padding-right: 0;
+        }
+    }
+    &__right-column {
+        flex-basis: 25%;
+        padding-left: 7.5px;
+        @include media-breakpoint-down(md) {
+            flex-basis: 100%;
+            padding-left: 0;
+        }
+    }
+}
+
+.forum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 0;
+    border-bottom: 1px solid #dedede;
+    &__title {
+        font-weight: 700;
+        margin-bottom: 0;
+        padding-left: 5px;
+        margin-top: 0;
+        @include media-breakpoint-down(sm) {
+            font-size: 1.2em;
+        }
+    }
+    &__count-posts {}
+    &__sort {
+        
+    }
+    &__dropdown-toggle {
+        border: 0;
+        background-color: transparent;
+        color: #666666;
+        cursor: pointer;
+        font-size: .85em;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.025);
+        }
+        &:focus {
+            outline: 0;
+        }
+        @include media-breakpoint-down(sm) {
+            font-size: .9em;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: .8em;
+        }
+    }
+    &__dropdown-menu {
+        padding: 0 0 10px 0;
+        min-width: 220px;
+        .dropdown-header {
+            font-size: 14px;
+            padding: 3px 10px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+        li {
+            &.active {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+            a {
+                font-size: 12px;
+                display: block;
+                padding: 2px 10px;
+                width: 100%;
+                color: #666666;
+                &:hover {
+                    text-decoration: none;
+                    color: #333333;
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
+            }
+        }
+    }
+}
+
+.posts-list {
+    margin-top: 25px;
+    &__item {}
+}
+
+.forum-item {
+    position: relative;
+    @extend .box-block;
+    margin-bottom: 35px;
+    border-top: 5px solid transparent;
+    &_success {
+        position: relative;
+        border-top-color: rgba($success-color, 0.7);
+        padding-top: 23px;
+        &:before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            padding: 0px 10px 5px 10px;
+            content: attr(data-sucess);
+            background-color: rgba($success-color, 0.7);
+            color: #fff;
+            font-size: 12px;
+            text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.25);
+        }
+    }
+    &__top {
+        display: flex;
+    }
+    &__middle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 15px;
+        &_flex-end {
+            justify-content: flex-end;
+        }
+    }
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+    }
+    &__top-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-basis: 40px;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    &__top-right {
+        flex-basis: 280px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 15px 15px 15px 5px;
+    }
+    &__main-icon {
+        margin: 15px 0 7.5px 0;
+        width: 24px;
+        height: 24px;
+        fill: rgba($main-color, .5);
+    }
+    &__vote {}
+    &__title {
+        font-size: 1.3em;
+        font-weight: 700;
+        display: flex;
+        align-items: flex-start;
+        padding: 0 10px;
+        &_h1 {
+            font-size: 2.2em;
+            color: #333;
+            padding-right: 50px;
+        }
+        @include media-breakpoint-down(sm) {
+            font-size: 1.2em;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: 1.1em;
+        }
+    }
+    &__share-link {
+        display: flex;
+        padding: 5px;
+        transition: all .2s ease-in-out 0s;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            .forum-item__share-icon {
+                fill: $accent-color;
+            }
+        }
+    }
+    &__share-icon {
+        width: 24px;
+        height: 24px;
+        fill: rgba($accent-color, .6);
+        transition: all .2s ease-in-out 0s;
+
+    }
+    &__share {
+        flex-basis: 100%;
+        padding: 15px 0 15px 5px;
+        &.collapsing {
+            height: 0;
+            display: flex;
+        }
+    }
+    &__text {
+        padding: 10px;
+        font-size: .9em;
+        color: #999;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 50px;
+        &_full {
+            overflow: auto;
+            text-overflow: inherit;
+            height: auto;
+            color: #666;
+        }
+        @include media-breakpoint-down(sm) {
+            font-size: .85em;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: .8em;
+        }
+    }
+    &__tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 0 15px;
+        margin-top: 15px;
+    }
+    &__tag {
+        margin: 0 5px 5px 5px;
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        background-color: rgba(135, 90, 123, 0.5);
+        color: #ffffff;
+        transition: background .2s ease-in-out 0s;
+        &:hover {
+            background-color: rgba(135, 90, 123, 1);
+            color: #ffffff;
+            text-decoration: none;
+        }
+    }
+    &__link {
+        flex-shrink: 1;
+        color: #666;
+        &:hover {
+            color: #000000;
+            text-decoration: none;
+        }
+    }
+    &__buttons-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        @include media-breakpoint-down(xs) {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px 10px;
+        border: 1px solid $accent-color;
+        color: $accent-color;
+        font-size: 12px;
+        // margin-bottom: 10px;
+        transition: all .2s ease-in-out 0s;
+        @include media-breakpoint-down(sm) {
+            font-size: 12px;
+            padding: 3px 7.5px;
+        }
+        
+        & + & {
+            margin-left: 15px;
+            @include media-breakpoint-down(xs) {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+        &:hover {
+            background-color: $accent-color;
+            color: #ffffff;
+            text-decoration: none;
+            .forum-item__button-icon {
+                fill: #fff;
+            }
+        }
+    }
+    &__button-icon {
+        width: 16px;
+        height: 16px;
+        fill: rgba($accent-color, .6);
+        margin-right: 5px;
+        transition: all .2s ease-in-out 0s;
+
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        flex-basis: 100%;
+        flex-grow: 0;
+        min-height: 30px;
+        background-color: rgba(0, 0, 0, 0.05);
+        padding: 7.5px 15px;
+        &_align_flex-end {
+            justify-content: flex-end;
+        }
+    }
+    &__footer-icon {
+        width: 20px;
+        height: 20px;
+        fill: rgba(135, 90, 123, 0.5);
+        margin-right: 5px;
+    }
+    &__footer-item {
+        padding: 0 15px;
+        display: flex;
+        align-items: flex-end;
+        font-size: 12px;
+        @include media-breakpoint-down(sm) {
+            flex-basis: 30%;
+            margin: 5px 0;
+        }
+        @include media-breakpoint-down(xs) {
+            flex-basis: 50%;
+        }
+    }
+    &__footer-item-link {
+        padding: 5px 15px;
+        display: flex;
+        align-items: flex-end;
+        font-size: 12px;
+        opacity: .5;
+        transition: all .1s ease-in-out 0s;
+        &:hover {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+        }
+        // @include media-breakpoint-down(sm) {
+        //     flex-basis: 30%;
+        //     margin: 5px 0;
+        // }
+        // @include media-breakpoint-down(xs) {
+        //     flex-basis: 50%;
+        // }
+    }
+    &__footer-item-value {
+        color: #888;
+        &:hover {
+            // color: #555;
+            text-decoration: none;
+        }
+    }
+    a.question__footer-item-value {
+        &:hover {
+            color: #555;
+            text-decoration: none;
+        }
+    }
+    &__country-flag {
+        height: 16px;
+        width: auto;
+        border: 1px solid rgba(0, 0, 0, 0.35);
+        opacity: .5;
+    }
+    &__comments-block {
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 50px;
+    }
+    &__comment-action {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+    &__comment-form {
+        flex-basis: 100%;
+    }
+}
+.comment {
+    margin: 10px;
+    padding: 25px 15px 0 15px; 
+    background-color: rgba(0, 0, 0, 0.05);
+    position: relative;
+    &:first-child {
+        margin-top: 20px;
+    }
+    &__close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+    &__close-button {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05)
+        }
+    }
+    &__close-icon {
+        width: 16px;
+        height: 16px;
+        fill: rgba($main-color, .5);
+    }
+    &__content {
+        font-size: .8em;
+        color: #666666;
+    }
+    &__footer {
+        background-color: rgba(0, 0, 0, 0.05);
+        margin: 0 -15px;
+        min-height: 40px;
+    }
+}
+.comment-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    &__icon {
+        width: 20px;
+        height: 20px;
+        fill: rgba(135, 90, 123, 0.5);
+        margin-right: 5px;
+        .comment-footer__action-button & {
+            margin-right: 0;
+        }
+    }
+    &__item {
+        padding: 0 15px;
+        display: flex;
+        align-items: flex-end;
+        font-size: 12px;
+        flex-shrink: 0;
+        @include media-breakpoint-down(sm) {
+            flex-basis: 30%;
+            margin: 5px 0;
+        }
+        &_sm-100 {
+            @include media-breakpoint-down(sm) {
+                flex-basis: 100%;
+            }
+        }
+        &_with-flag {
+            flex-basis: 50px;
+        }
+    }
+    &__item-value {
+        color: #888;
+    }
+    a.question__footer-item-value {
+        &:hover {
+            color: #555;
+            text-decoration: none;
+        }
+    }
+    &__country-flag {
+        height: 16px;
+        width: auto;
+        border: 1px solid rgba(0, 0, 0, 0.35);
+        opacity: .5;
+    }
+    &__action {
+        padding: 0 15px;
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__action-button {
+        background-color: transparent;
+        border: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+        cursor: pointer;
+        &:hover, &:focus {
+            outline: 0;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+.comment-form {
+    padding: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    &.collapse.show {
+        display: flex;
+    }
+    &.collapsing {
+        display: flex;
+    }
+    &__textarea {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+        font-size: 14px;
+        padding: 5px;
+        &:focus {
+            outline: 0;
+            border: 1px solid rgba($accent-color, .4);
+        }
+    }
+    &__submit {
+        font-size: 14px;
+        display: block;
+        background-color: #00a09d;
+        color: #ffffff;
+        padding: 5px 15px;
+        border: 1px solid $accent-color;
+        cursor: pointer;
+        &:hover {
+            color: #ffffff;
+            background-color: #00bab6;
+            text-shadow: -1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+.vote {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px;
+    &__up,
+    &__down {
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        &:focus {
+            outline: 0;
+        }
+        &:after {
+            content: "";
+            cursor: pointer;
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            display: block;
+            box-sizing: border-box;
+            border: 7px solid transparent;
+        }
+    }
+    &__up {
+        margin-bottom: 3px;
+        &:after {
+            border-bottom-color: rgba($success-color, 0.4);
+        }
+        &:hover {
+            &:after {
+                border-bottom-color: rgba($success-color, 1);
+            }
+        }
+    }
+    &__down {
+        margin-top: 2px;
+        &:after {
+            border-top-color: rgba($error-color, 0.4);
+        }
+        &:hover {
+            &:after {
+                border-top-color: rgba($error-color, 1);
+            }
+        }
+    }
+    &__count {
+        font-size: 18px;
+        font-weight: 700;
+        color: #666666;
+        margin-bottom: -1px;
+    }
+}
+
+.forum-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+    li {
+        margin: 0 5px;
+        &.disabled {
+            display: none;
+        }
+        &.active {
+            a {
+                border-top-color: $main-color;
+                font-weight: 700;
+            }
+        }
+    }
+    a {
+        display: block;
+        padding: 10px;
+        color: #666;
+        min-width: 38px;
+        border-top: 1px solid rgba($main-color, .2);
+        text-align: center;
+        &:hover {
+            text-decoration: none;
+            border-top-color: $main-color;
+            color: #333;
+        }
+    }
+}
+
+.favorit-forum-item  {
+    padding: 10px 0;
+    &__link {
+        display: block;
+        &_active {}
+    }
+    &__icon {
+        width: 32px;
+        height: 32px;
+        fill: rgba(0, 0, 0, 0.3);
+        .favorit-forum-item__link_active & {
+            fill: rgba(#ffcc00, .5);
+        }
+    }
+}
+.accept-answer-forum-item {
+    padding: 10px 0;
+    &__link {
+        display: block;
+        &_active {}
+    }
+    &__icon {
+        width: 32px;
+        height: 32px;
+        fill: rgba(0, 0, 0, 0.3);
+        .accept-answer-forum-item__link_active & {
+            fill: rgba($success-color, .5);
+        }
+    }
+}
+
+
+.sub-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    flex-basis: 100%;
+    flex-grow: 0;
+    border-bottom: 1px solid rgba($main-color, .2);
+    padding: 7.5px 0;
+    .forum-item__title_h1 + & {
+        margin-top: 15px;
+    }
+    &__icon {
+        width: 20px;
+        height: 20px;
+        fill: rgba(135, 90, 123, 0.5);
+        margin-right: 5px;
+    }
+    &__item {
+        padding: 0 15px;
+        display: flex;
+        align-items: flex-end;
+        font-size: 12px;
+        flex-shrink: 0;
+        @include media-breakpoint-down(sm) {
+            flex-basis: 30%;
+            margin: 5px 0;
+        }
+        &_sm-100 {
+            @include media-breakpoint-down(sm) {
+                flex-basis: 100%;
+            }
+        }
+        &_with-flag {
+            flex-basis: 50px;
+        }
+    }
+    &__item-value {
+        color: #888;
+    }
+    a.question__footer-item-value {
+        &:hover {
+            color: #555;
+            text-decoration: none;
+        }
+    }
+    &__country-flag {
+        height: 16px;
+        width: auto;
+        border: 1px solid rgba(0, 0, 0, 0.35);
+        opacity: .5;
+    }
+}
+.button-list {
+    &__item {
+
+    }
+}
+
+.post-reply {
+    padding: 25px 0;
+    &__title {
+        font-size: 1.5em;
+        color: #333333;
+    }
+    &__description {
+        color: #666666;
+        line-height: 1.2;
+        font-size: .9em;
+    }
+    &__form {
+
+    }
+    &__submit {
+        display: inline-block;
+        margin: 15px auto;
+        font-size: 14px;
+        font-weight: 300;
+        display: block;
+        background-color: $accent-color;
+        color: #ffffff;
+        padding: 5px 15px;
+        border: 0;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+            color: #ffffff;
+            background-color: lighten($accent-color, 5%);
+            text-shadow: -1px 1px 2px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+    }
+}
+
+.alert {
+    position: relative;
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        padding: 2px 4px;
+        line-height: 16px;
+    }
+}

@@ -1,0 +1,59 @@
+<header class="header__main">
+  <div class="container">
+    <div class="logo">
+      <a href="/" class="logo__link">
+        <span class="logo__image"></span>
+      </a>
+    </div>
+    <button href="#" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle main menu">
+      <%- partial('../svg-sprite-element', {icon: "menu", cssSelector: "navbar-toggler__icon navbar-toggler__icon_close"}) %>
+      <%- partial('../svg-sprite-element', {icon: "close", cssSelector: "navbar-toggler__icon navbar-toggler__icon_open"}) %>
+    </button>
+    <ul class="main-menu collapse" id="main-menu">
+      <li class="main-menu__item">
+        <a href="/forum/" class="main-menu__link">Форум</a>
+      </li>
+      <li class="main-menu__item">
+        <a href="/doc/" class="main-menu__link">Документация</a>
+      </li>
+      <li class="main-menu__item">
+        <a href="/blog" class="main-menu__link">Блоги</a>
+      </li>
+      <li class="main-menu__item">
+        <a href="/slides/" class="main-menu__link">Видео</a>
+      </li>
+      <!-- <li class="main-menu__item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
+          <a href="#" class="main-menu__link dropdown-toggle">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" role="menuitem">Dropdown 1</a>
+            <a class="dropdown-item" href="#" role="menuitem">Dropdown 2</a>
+          </div>
+        </li> -->
+    </ul>
+
+    <% var autorization = false %>
+
+    <% if (autorization == true) { %>
+      <button href="#" class="user-menu-toggler user-menu-toggler_auth collapsed" type="button" data-toggle="collapse" data-target="#user-menu"
+        aria-controls="main-menu" aria-expanded="false" aria-label="Toggle user menu">
+        <%- partial('common/svg-sprite-element', {icon: "person", cssSelector: "user-menu-toggler__icon user-menu-toggler__icon_close"}) %>
+          <%- partial('common/svg-sprite-element', {icon: "close", cssSelector: "user-menu-toggler__icon user-menu-toggler__icon_open"}) %>
+      </button>
+      <nav class="user-menu user-menu_auth collapse" id="user-menu">
+        <a href="#" class="user-menu__item">Моя учетная запись</a>
+        <a href="#" class="user-menu__item">Выход</a>
+      </nav>
+    <% } else { %>
+      <button href="#" class="user-menu-toggler collapsed" type="button" data-toggle="collapse" data-target="#user-menu" aria-controls="main-menu"
+        aria-expanded="false" aria-label="Toggle user menu">
+        <%- partial('common/svg-sprite-element', {icon: "person", cssSelector: "user-menu-toggler__icon user-menu-toggler__icon_close"}) %>
+        <%- partial('common/svg-sprite-element', {icon: "close", cssSelector: "user-menu-toggler__icon user-menu-toggler__icon_open"}) %>
+      </button>
+      <nav class="user-menu collapse" id="user-menu">
+        <a href="/web/login/" class="user-menu__item user-menu__item_sign-in">Войти</a>
+        <a href="/web/signup/" class="user-menu__item user-menu__item_registration">Регистрация</a>
+      </nav>
+    <% } %>
+  </div>
+
+</header>

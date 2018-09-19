@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+tmp/
+package-lock.json
+themes/openodoo/package-lock.json

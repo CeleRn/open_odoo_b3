@@ -1,0 +1,23 @@
+<%- partial('common/main-header') %>
+<div class="container">
+  <div class="forums-list">
+    <a href="/forum/1/" class="forums-list__item forums-list-item">
+      <span class="forums-list-item__icon-block">
+          <%- partial('common/svg-sprite-element', {icon: "live-help", cssSelector: "forums-list-item__icon"}) %>
+      </span>
+      <span class="forums-list-item__title">Вопросы и ответы</span>
+    </a>
+    <a href="/forum/" class="forums-list__item forums-list-item">
+      <span class="forums-list-item__icon-block">
+          <%- partial('common/svg-sprite-element', {icon: "link", cssSelector: "forums-list-item__icon"}) %>
+      </span>
+      <span class="forums-list-item__title">Полезные ссылки</span>
+    </a>
+    <a href="/forum/" class="forums-list__item forums-list-item">
+      <span class="forums-list-item__icon-block">
+          <%- partial('common/svg-sprite-element', {icon: "people", cssSelector: "forums-list-item__icon"}) %>
+      </span>
+      <span class="forums-list-item__title">Работа сообщества</span>
+    </a>
+  </div>
+</div>

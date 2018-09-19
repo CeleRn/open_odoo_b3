@@ -1,0 +1,32 @@
+<div class="section-navbar">
+
+  <a href="/forum/1" class="section-navbar__title">Вопросы и ответы</a>
+  <button type="button" class="section-navbar__menu-togger section-menu-togger collapsed" type="button" data-toggle="collapse"
+    data-target="#section-menu" aria-controls="section-menu" aria-expanded="false" aria-label="Toggle main menu">
+    <%- partial('../../common/svg-sprite-element', {icon: "section-menu", cssSelector: "section-menu-togger__icon section-menu-togger__icon_close"}) %>
+      <%- partial('../../common/svg-sprite-element', {icon: "close", cssSelector: "section-menu-togger__icon section-menu-togger__icon_open"}) %>
+  </button>
+  <nav class="section-navbar__menu section-menu collapse" id="section-menu">
+    <a class="section-menu__link" href="/forum/1?sorting=relevancy+desc">Тренды</a>
+    <a class="section-menu__link active" href="/forum/1?sorting=create_date+desc">Свежайшее</a>
+    <a class="section-menu__link" href="/forum/1/users">Люди</a>
+    <a class="section-menu__link" href="/forum/1/tag">Теги</a>
+    <a class="section-menu__link" href="/forum/1/badge">Значки</a>
+  </nav>
+  <button href="#" class="section-navbar__search-toggler search-toggler collapsed" type="button" data-toggle="collapse" data-target="#section-search"
+    aria-controls="section-search" aria-expanded="false" aria-label="Toggle section search">
+    <%- partial('../../common/svg-sprite-element', {icon: "search", cssSelector: "search-toggler__icon search-toggler__icon_close"}) %>
+      <%- partial('../../common/svg-sprite-element', {icon: "close", cssSelector: "search-toggler__icon search-toggler__icon_open"}) %>
+  </button>
+  <div class="section-navbar__search section-search" id="section-search">
+    <form class="section-search-form" role="search" method="get" action="/forum/1/">
+      <input type="text" name="search" class="section-search-form__input" placeholder="Поиск..." value="">
+      <button type="submit" class="section-search-form__submit">
+        <%- partial('../../common/svg-sprite-element', {icon: "search", cssSelector: "section-search-form__icon"}) %>
+      </button>
+    </form>
+  </div>
+  <div class="section-navbar__action-block">
+    <a href="#" class="section-navbar__action-button">Задать вопрос</a>
+  </div>
+</div>
